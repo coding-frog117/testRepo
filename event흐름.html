@@ -1,0 +1,32 @@
+<!-- /이벤트는 실행하면 캡쳐링-타깃-버블링 단계를 거친다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>hello world
+        <button>버튼입니다.</button>
+        <ul>
+            <li id="apple">사과</li>
+            <li>귤</li>
+            <li>배</li>
+        </ul>
+    </div>
+
+    <script>
+        const mylists=document.querySelector("ul");
+        mylists.addEventListener("click",()=>{
+            console.log("this is a list");
+        },true); //캡쳐링
+
+        const mylist=document.querySelector("#apple");
+        mylist.addEventListener("click",()=>{
+            console.log("this is a firstlist");
+        }); //타깃
+    </script>
+</body>
+</html>
